@@ -1,0 +1,8 @@
+@title Test
+@author Phineas Greene
+@section Section
+@card Tag Tag Tag
+-cite Phineas Greene, Phin Co., March 10 March
+-cred Super smart guy. Worked for super smart company.
+-link https://phin.co/
+-ev "Lorem Ipsum yada yada yada. [[Evidence about that stuff.]] Hello world. Compile away. LaTex us awesome. Sed is great. Special characters. & lorem. $ ipsum. \ lorem. % ipsum. # lorem, { ipsum, } lorem, _ ipsum."

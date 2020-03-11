@@ -1,0 +1,23 @@
+#escape special characters
+s:\\:\\textbackslash :g
+s:&:\\&:g
+s:\$:\\$:g
+s:\"\s:'':g
+s:\s\":``:g
+s:%:\\%:g
+s:\#:\\#:g
+s:_:\\_:g
+#markup tags and sections
+s:@title\s*(.*):\\title{\1}\n\\begin{document}\n\\maketitle\n\\tableofcontents\n:g
+s:@section\s*(.*):\\section{\1}:g
+s:@card\s*(.*):\\subsection{\1}:g
+#markup scource credentials etc
+s:-cite\s*(.*):\\textit{\\ul{\1}}:g
+s:-cred\s*(.*):\\textit{\1}:g
+s:-ev\s*(.*):\\paragraph{\1}:g
+s:-link\s*(.*):\\textit{\\url{\1}}:g
+#underline
+s:\[\[(.*)\]\]:\\ul{\1}:g
+#end the document and add preamble
+1s/^/\\documentclass{article}\n\\usepackage{soul}\n\\usepackage[colorlinks]{hyperref}\n\\hypersetup{citecolor=black}\n\\hypersetup{linkcolor=black}\n\\hypersetup{urlcolor=blue}\n/
+$a \\\end{document} 
