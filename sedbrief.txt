@@ -8,12 +8,12 @@ s:%:\\%:g
 s:\#:\\#:g
 s:_:\\_:g
 #markup tags and sections
-s:@title\s*(.*):\\title{\1}\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\\newpage\n:g
+s:@title\s*(.*):\\title{\1}\n\\begin{document}\n\\pagenumbering{gobble}\n\\maketitle\n\\tableofcontents\n\\newpage\n\\pagenumbering{arabic}\n:g
 s:@section\s*(.*):\\section{\1}:g
 s:@card\s*(.*):\\subsection{\1}:g
 #markup scource credentials etc
 s:-cite\s*(.*):\\textit{\\ul{\1}}:g
-s:-cred\s*(.*):\\textit{\1}:g
+s:-cred\s*(.*):\\textit{(\1)}:g
 s:-ev:\\paragraph{}:g
 s:-link\s*(.*):\\textit{\\url{\1}}:g
 #underline
