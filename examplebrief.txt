@@ -1,5 +1,4 @@
 @title Test
-@author Phineas Greene
 @section Section
 @card Tag Tag Tag
 -cite Phineas Greene, Phin Co., March 10 March
