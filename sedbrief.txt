@@ -7,6 +7,12 @@ s:\s\":``:g
 s:%:\\%:g
 s:\#:\\#:g
 s:_:\\_:g
+#add preamble
+1s/^/insertpreamble/
+/insertpreamble/ {
+	r preamblelatex.txt
+	s:insertpreamble::
+}
 #markup tags and sections
 s:@title\s*(.*):\\title{\1}\ninsertbegindoc:g
 /insertbegindoc/ {
@@ -22,6 +28,5 @@ s:-ev:\\paragraph{}:g
 s:-link\s*(.*):\\textit{\\url{\1}}:g
 #underline
 s:\[\[(.*)\]\]:\\ul{\1}:g
-#end the document and add preamble
-1s/^/\\documentclass{article}\n\\usepackage{soul}\n\\usepackage[colorlinks]{hyperref}\n\\hypersetup{citecolor=black}\n\\hypersetup{linkcolor=black}\n\\hypersetup{urlcolor=blue}\n\\addtolength{\\oddsidemargin}{-.875in}\n\\addtolength{\\evensidemargin}{-.875in}\n\\addtolength{\\textwidth}{1.75in}\n\\addtolength{\\topmargin}{-.875in}\n\\addtolength{\\textheight}{1.75in}\n\\author{Typesetting By Phineas Greene}\n/
+#end the document
 $a \\\end{document} 

@@ -1,9 +1,8 @@
 @echo off
 IF %1.==. GOTO E1
 sed -r -f "C:\Users\phine\Documents\Debate\Brief Markup\sedbrief.txt" "%1.txt" > "%1.tex"
-del "%1.pdf"
-IF %ERRORLEVEL% neq 0 GOTO E2
 pdflatex "%1.tex"
+IF %ERRORLEVEL% neq 0 GOTO E2
 del "%1.log"
 GOTO END
 :E1
